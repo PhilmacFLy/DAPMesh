@@ -1,0 +1,3 @@
+BindingPort = 7373
+Members = ["node1.dapmesh.net", "node2.dapmesh.net", "node3.dapmesh.net"]
+RetransmitMultiplier = 3
