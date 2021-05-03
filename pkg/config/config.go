@@ -7,11 +7,29 @@ import (
 	"github.com/pelletier/go-toml"
 )
 
-//Config is the struct to save and load the config file
-type Config struct {
+type GossiperConf struct {
 	BindingPort          int
 	Members              []string
 	RetransmitMultiplier int
+}
+
+type HTTPConf struct {
+	Port int
+	TLS  bool
+	Key  string
+	Cert string
+}
+
+type AuthConf struct {
+	Enabled  bool
+	Database string
+}
+
+//Config is the struct to save and load the config file
+type Config struct {
+	Gossiper       GossiperConf
+	HTTP           HTTPConf
+	Authentication AuthConf
 }
 
 //LoadConfig loads the config from the filepath and gives back a Config or an error

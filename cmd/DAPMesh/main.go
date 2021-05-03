@@ -20,6 +20,6 @@ func main() {
 	if err != nil {
 		log.Fatalln("Error loadin config:" + err.Error())
 	}
-	_ = gossiper.StartGossiper(c)
+	_, _ = gossiper.StartGossiper(c.Gossiper)
 
 }
